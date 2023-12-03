@@ -12,6 +12,7 @@ export default (variables: VariablesConfig[] | undefined, templateConfig: Templa
   if (templateConfig.default) {
     variableArray = variableArray.concat(templateConfig.default);
   }
+  // adding the variables array as many times as needed for nested variables
   for (let i = 0; i < recursiveness; i++) {
     variableArray = variableArray.concat(variableArray)
   }
