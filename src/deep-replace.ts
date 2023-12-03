@@ -4,7 +4,7 @@ import { LovelaceCardConfig } from 'custom-card-helpers';
 export default (
   variables: VariablesConfig[] | undefined,
   templateConfig: TemplateConfig,
-  recursiveness: int = 0,
+  recursiveness: number = 0,
 ): LovelaceCardConfig => {
   if (!variables && !templateConfig.default) {
     return templateConfig.card;
