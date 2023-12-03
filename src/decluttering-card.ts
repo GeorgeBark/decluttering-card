@@ -85,7 +85,7 @@ class DeclutteringCard extends LitElement {
     this._ro = new ResizeObserver(() => {
       this._displayHidden();
     });
-    this._config = deepReplace(config.variables, templateConfig);
+    this._config = deepReplace(config.variables, templateConfig, 1);
     this._type = templateConfig.card ? 'card' : 'element';
   }
 
