@@ -1,7 +1,11 @@
 import { VariablesConfig, TemplateConfig } from './types';
 import { LovelaceCardConfig } from 'custom-card-helpers';
 
-export default (variables: VariablesConfig[] | undefined, templateConfig: TemplateConfig, recursiveness: int = 0): LovelaceCardConfig => {
+export default (
+    variables: VariablesConfig[] | undefined, 
+    templateConfig: TemplateConfig, 
+    recursiveness: int = 0
+  ): LovelaceCardConfig => {
   if (!variables && !templateConfig.default) {
     return templateConfig.card;
   }
@@ -14,7 +18,7 @@ export default (variables: VariablesConfig[] | undefined, templateConfig: Templa
   }
   // adding the variables array as many times as needed for nested variables
   for (let i = 0; i < recursiveness; i++) {
-    variableArray = variableArray.concat(variableArray)
+    variableArray = variableArray.concat(variableArray);
   }
   let jsonConfig = templateConfig.card ? JSON.stringify(templateConfig.card) : JSON.stringify(templateConfig.element);
   variableArray.forEach(variable => {
